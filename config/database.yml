@@ -1,0 +1,19 @@
+default: &default
+      adapter: postgresql
+      encoding: UTF8
+      pool: 5
+      username: mandakeru
+      password: S@ketsu123
+      host:     <%= ENV['IP'] %>
+
+development:
+  <<: *default
+  database: pipefy_integration_development
+
+test:
+  <<: *default
+  database: pipefy_integration_test
+
+production:
+  <<: *default
+  database: pipefy_integration_production
