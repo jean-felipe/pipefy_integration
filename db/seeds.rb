@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+    @pipes = Pipe.create(name: 'Metas', updated_at: Date.today)
+  	@pipes = Pipe.create(name: 'Construção', updated_at: Date.today)
+  	@pipes = Pipe.create(name: 'Controle', updated_at: Date.today)
+  	
