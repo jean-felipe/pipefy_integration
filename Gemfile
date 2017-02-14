@@ -32,6 +32,7 @@ gem 'devise'
 gem 'puma'
 gem "twitter-bootstrap-rails"
 gem 'jquery-ui-rails'
+gem 'react-rails'
 
 
 group :development, :test do

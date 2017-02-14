@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20170212210621) do
     t.string   "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "pipe_id"
   end
 
   create_table "organizations", force: :cascade do |t|
