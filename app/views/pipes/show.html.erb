@@ -1,2 +1,18 @@
-<h1>Pipes#show</h1>
-<p>Find me in app/views/pipes/show.html.erb</p>
+<div class="content-pipes">
+  <div class="pipes-header">
+    <div class="row">
+      <h1><%= @pipe.name %></h1>
+      <hr>
+    </div>
+  	
+  </div>	
+
+  <div class="phase-content">
+  	<% @phase.each do |ph| %>
+  	 <%= react_component('Phase', {name: ph.name}, {total_card: ph.cards.count}) %>
+  	  
+  	<% end %>
+
+  </div>
+
+</div>

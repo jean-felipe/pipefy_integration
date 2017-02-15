@@ -33,6 +33,7 @@ gem 'puma'
 gem "twitter-bootstrap-rails"
 gem 'jquery-ui-rails'
 gem 'react-rails'
+gem 'active_model_serializers'
 
 
 group :development, :test do
