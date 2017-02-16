@@ -1,39 +1,31 @@
-class Phase extends React.Component{
-	debugger;
-	getInitialState() { return { cardsList: [] } }
-
-	_getCards(){
-		const cardsList = [
-			{id: 1, title: 'Teste'},
-			{id: 2, title: 'Teste2'}];
-
-		return cardsList.map((card) => {
-			return(
-				<Cards title={card.title} key={card.id}/>
-				);
-		});
-	};
-
-	_fetchCards(){
-	  jQuery.ajax({
-	  	method: 'GET',
-	  	url: '/api/cards',
-	  	success: (cards) => {
-	  		this.setState({ cards })
-	  	}
-	  });
-	};
-
+var Phase = React.createClass({
 	
+	getInitialState: function(){
+		return { cardList: []}
+	},
+	componentDidMount: function(){
+		this.getDataFromApi();
+	},
+	getDataFromApi: function(){
+		var self = this;
+		jQuery.ajax({
+			method: 'GET',
+			url: '/api/cards.1',
+			success: function(data){
+				self.setState({ cardList: data});
+			},
+			error: function(xhr, status, error) {
+				alert('Cannot get data from API:', error);
+			}
+		});
+	},
 
-
-
-	componentDidMount(){
-		$.getJSON('/api/cards.1', (response) => { this.setState({ cardsList: response }) });
-	};
-
-	render(){
-		const cards = this._getCards();
+	render: function(){
+		var cards = [];
+		debugger;
+		this.props.cards.forEach(function(card) {
+			cards.push(<Cards title={card.title} key={card.id} />);
+		}.bind(this));
 		return(
 		  <div className="phase-item" id="phase">
 			<div className="phase-item-header">
@@ -41,11 +33,11 @@ class Phase extends React.Component{
 			 <p>{ this.props.cards}</p>
 			</div>
 			<div className="phase-item-body">
-				{cards}
+			{cards}
 			</div>
 			
 			
           </div>
 		);
 	}
-}
+});

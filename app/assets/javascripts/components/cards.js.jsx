@@ -1,14 +1,14 @@
 
-class Cards extends React.Component{
+var Cards = React.createClass({
 
 
-  render() {
+  render: function() {
     return (
       <div className="card">
-        <div>{this.props.title}</div>
-        <div>{this.props.description}</div>
+        <div>{card.title}</div>
+        
       </div>
     );
   }
 
-}
+});
