@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     get  'cards', to: 'cards#index'
     post 'cards', to: 'cards#create', as: 'create_card'
+    post 'phases', to: 'phases#create', as: 'create_phase'
   end
 
   get 'pipes/show', as: :pipes

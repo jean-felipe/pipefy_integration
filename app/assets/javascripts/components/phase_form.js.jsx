@@ -7,7 +7,7 @@ var PhaseForm = React.createClass({
 	getInitialState: function(){
 		return{
 			name: '',
-			pipe_id: '',
+			pipe_id: this.props.pipe_id,
 		}
 	},
 
@@ -24,7 +24,7 @@ var PhaseForm = React.createClass({
 					self.setState(self.getInitialState());
 				},
 				error: function(xhr, status, error){
-					alert('Cannot add new Phase: ', error);
+					alert('Close and reload the page ', error);
 				}
 			})
 		} else{
@@ -48,17 +48,28 @@ var PhaseForm = React.createClass({
 
 	render: function(){
 		return(
+			
 			<form className="formPhase" onSubmit={this.handleAdd}>
 				<div className="form-group">
 				  <input type="text"
 				  className="form-control"
 				  name="name"
-				  placeholder="name"
+				  placeholder="Title"
 				  ref="name"
 				  value={this.state.name}
 				  onChange={this.handleChange} />	
 				</div>
-				<button type="submit" className="btn btn-primary">Add</button>
+				<div>
+				<input type="text"
+				  className="form-control hidden"
+				  name="pipe_id"
+				  placeholder="pipe_id"
+				  ref="pipe_id"
+				  value={this.state.pipe}
+				  onChange={this.handleChange} />	
+				</div>
+				<button type="submit" className="btn btn-primary">Create</button>
+				<button type="button" className="btn btn-default" data-dismiss="modal">Cancelar</button>
 			</form>
 			)
 	}

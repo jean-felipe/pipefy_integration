@@ -2,14 +2,14 @@ var CardForm = React.createClass({
 	propTypes: {
 		title: React.PropTypes.string,
 		user_id: React.PropTypes.integer,
-		current_phase_id: React.PropTypes.integer
+		phase_id: React.PropTypes.integer
 	},
 
 	getInitialState: function(){
 		return{
 			title: '',
 			user_id: '',
-			current_phase_id: '',
+			phase_id: this.props.phase_id,
 		}
 	},
 
@@ -60,7 +60,8 @@ var CardForm = React.createClass({
 				  value={this.state.title}
 				  onChange={this.handleChange} />	
 				</div>
-				<button type="submit" className="btn btn-primary">Add</button>
+				<div></div>
+				<button type="submit" className="btn btn-primary pull-right">Create Card</button>
 			</form>
 			)
 	}

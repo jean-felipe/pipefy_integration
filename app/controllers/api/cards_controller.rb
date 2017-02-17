@@ -8,6 +8,7 @@ class Api::CardsController < ApplicationController
   end
 
    def create
+    binding.pry
   	card = Card.new(card_params)
   	if card.save
   	  render json: card 
@@ -19,6 +20,6 @@ class Api::CardsController < ApplicationController
   private
 
   def card_params
-  	params.require(:card).permit(:title, :user_id, :current_phase_id )
+  	params.require(:card).permit(:title, :user_id, :phase_id)
   end
 end
