@@ -1,22 +1,14 @@
-// var Cards = React.createClass({
-//   propTypes: {
-//     title: React.PropTypes.string,
-//     description: React.PropTypes.string
-//   },
 
-  
-// });
+var Cards = React.createClass({
 
 
-
-class Cards extends React.Component{
-  render() {
+  render: function() {
     return (
-      <div>
-        <div>Title: {this.props.title}</div>
-        <div>Description: {this.props.description}</div>
+      <div className="card">
+        <div>{card.title}</div>
+        
       </div>
     );
   }
 
-}
+});

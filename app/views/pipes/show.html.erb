@@ -1,2 +1,84 @@
-<h1>Pipes#show</h1>
-<p>Find me in app/views/pipes/show.html.erb</p>
+<div class="content-pipes">
+  <div class="pipes-header">
+  <%= flash_messages %>
+    <div class="row">
+      <h1><%= @pipe.name %></h1>
+      <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#phaseForm">New Phase</button>
+      <hr>
+    </div> 	
+  </div>	
+
+<% @phase.each do |ph| %>
+  <div class="phase-content">
+  	<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+      </div>
+      <div class="modal-body">
+        <p>New Card</p>
+        <%= react_component('CardForm', {phase_id: ph.id}) %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  	 <%#= react_component('Phase', {name: ph.name}, {total_card: ph.cards.count}) %>
+  	 <div class="phase-item" id="phase">
+		<div class="phase-item-header">
+			<h2><%= ph.name %></h2>
+			<p>Cards: <%= ph.cards.count %></p>
+		</div>
+		<div class="phase-item-body">
+			<% ph.cards.each do |card| %>
+				<div class="card">
+        			<div><%= card.title %></div>
+        
+      			</div>
+
+			<% end %>
+			<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+			 data-target="#myModal">New Card</button>
+
+			<!-- Modal Card form-->
+
+		</div>
+  	  
+  
+
+  </div>
+	
+</div>
+<% end %>
+
+
+<!-- Modal Phase Form-->
+<div id="phaseForm" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+      </div>
+      <div class="modal-body">
+        <p>New Phase.</p>
+        <%= react_component('PhaseForm', {pipe_id: @pipe.id}) %>
+
+      </div>
+      <div class="modal-footer">
+       
+      </div>
+    </div>
+
+  </div>
+</div>

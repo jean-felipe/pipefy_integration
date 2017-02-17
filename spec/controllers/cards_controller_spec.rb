@@ -15,6 +15,13 @@
 
 require 'rails_helper'
 
-describe Card, type: :model do
-  it { should belong_to(:phase)}
+RSpec.describe CardsController, type: :controller do
+
+  describe "GET #show" do
+    it "returns http success" do
+      get :show
+      expect(response).to have_http_status(:success)
+    end
+  end
+
 end

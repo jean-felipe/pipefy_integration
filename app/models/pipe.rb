@@ -20,4 +20,6 @@ class Pipe < ActiveRecord::Base
   has_many :phases
   has_many :cards, through: :phases
 
+  validates :organization_id, uniquesness: false
+
 end

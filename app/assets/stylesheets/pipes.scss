@@ -1,3 +1,44 @@
-// Place all the styles related to the pipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.pipes-header{
+font-family: Tahoma, Geneva, sans-serif;
+  font-size: 1.1em;
+  margin-left: 30px;
+}
+.content-pipes{
+
+}
+.phase-content{
+  display: inline-flex;
+}
+.phase-item{
+  width: 320px;
+  margin-left: 5px;	
+  text-align: center;
+  border: 1px solid black;
+}
+.phase-item-header{
+  border-bottom: 1px solid black;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 1.5em;
+  background-color: white;
+  height: 80px auto;
+  color: #7f8b97;;
+}
+.phase-item-header p{
+  font-size: 1.0em;
+}
+.phase-item-body{
+  height: 400px;
+  background-color: #556473;
+
+}
+.card{
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 1.1em;
+   box-shadow: 5px 5px 2px #000;
+
+}

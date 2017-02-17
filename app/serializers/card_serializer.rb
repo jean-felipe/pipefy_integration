@@ -13,8 +13,8 @@
 #  user_id          :integer
 #
 
-require 'rails_helper'
+class CardSerializer < ActiveModel::Serializer
+  attributes :id, :title
 
-describe Card, type: :model do
-  it { should belong_to(:phase)}
+  belongs_to :phase
 end
