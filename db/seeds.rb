@@ -24,12 +24,11 @@
   	@phase9 = Phase.create(name: 'Feito', description: 'Coisas para comprar na loja', pipe_id: @pipes3.id)
 
 
-    Card.create(title: "Correr 3 horas", current_phase_id: @phase.id, phase_id: @phase.id, current_phase_id: @phase.id)
-    Card.create(title: "Correr 3 horas", current_phase_id: @phase.id, phase_id: @phase.id, current_phase_id: @phase.id)
-    Card.create(title: "Correr 3 horas", current_phase_id: @phase4.id, phase_id: @phase4.id, current_phase_id: @phase4.id)
-    Card.create(title: "Correr 3 horas", current_phase_id: @phase7.id, phase_id: @phase4.id, current_phase_id: @phase4.id)
-    Card.create(title: "Correr 3 horas", current_phase_id: @phase7.id, phase_id: @phase7.id, current_phase_id: @phase7 )
-
+    Card.create(title: "Correr 3 horas",  phase_id: @phase.id)
+    Card.create(title: "Correr 3 horas",  phase_id: @phase.id) 
+    Card.create(title: "Correr 3 horas",  phase_id: @phase4.id) 
+    Card.create(title: "Correr 3 horas",  phase_id: @phase4.id) 
+    Card.create(title: "Correr 3 horas",  phase_id: @phase7.id)
 
   		                  
   	

@@ -1,9 +1,10 @@
 <div class="container">
+
 <%- model_class = Pipe -%>
 <div class=	"row">
 	
   <%= link_to "Fetch new data",
-            root_path,
+            organization_fetch_data_path,
             :class => 'btn btn-primary fetch-new' %>
   <div class="page-header">
     <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
@@ -15,10 +16,11 @@
 <div class="content-pipes">
   <% @pipes.each do |pipe| %>
   	<div class="pipe col-sm-4">
-  	  <h2><%= pipe.name %></h2>
-  	  <p><%= pipe.updated_at %></p>
+  	  <h2><%= pipe["name"] %></h2>
+  	  <p><%= pipe["updated_at"] %></p>
   	  <div class="hover-options-pipe">
   	  	<%= link_to "View Pipe", pipes_path(pipe), :class => 'btn btn-primary hover-pipe' %>
+        <%#= link_to 'Delete Pipe', pipes_path(pipe), :method => :delete, :data => {:confirm => 'Are you sure?'}, :class => 'btn btn-xs btn-danger' %>
   	  </div>
   	</div>
   <% end %>

@@ -35,6 +35,10 @@ gem 'jquery-ui-rails'
 gem 'react-rails'
 gem 'active_model_serializers'
 
+# API
+gem 'faraday'
+gem 'httparty'
+
 
 group :development, :test do
   gem 'factory_girl_rails'

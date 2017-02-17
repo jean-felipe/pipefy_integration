@@ -20,6 +20,6 @@ class Card < ActiveRecord::Base
  # validates_presence_of :current_phase_id
 
  def current_phase_id
-   current_phase_id = Phase.find(current_phase_id)
+   current_phase_id = Phase.find(phase_id)
  end
 end
