@@ -15,7 +15,7 @@
 
 FactoryGirl.define do
   factory :phase do
-    name "MyString"
+    name "First"
     description "MyText"
     done false
     pipe_id 1

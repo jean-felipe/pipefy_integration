@@ -34,6 +34,7 @@ gem "twitter-bootstrap-rails"
 gem 'jquery-ui-rails'
 gem 'react-rails'
 gem 'active_model_serializers'
+gem 'poltergeist'
 
 # API
 gem 'faraday'

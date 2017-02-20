@@ -56,6 +56,7 @@ var PhaseForm = React.createClass({
 				  name="name"
 				  placeholder="Title"
 				  ref="name"
+				  id="phase_name"
 				  value={this.state.name}
 				  onChange={this.handleChange} />	
 				</div>

@@ -13,7 +13,7 @@
 
 FactoryGirl.define do
   factory :pipe do
-    name "MyString"
+    name "Pipe for test"
     token "MyText"
     can_edit false
   end
