@@ -15,7 +15,7 @@
 
 FactoryGirl.define do
   factory :card do
-    title "MyString"
+    title "Card for test"
     current_phase_id 1
     due_date "2017-02-12"
     index "9.99"

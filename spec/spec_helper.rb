@@ -3,6 +3,9 @@ require 'factory_girl_rails'
 require 'pry'
 require 'support/controller_helpers'
 require 'devise'
+require 'capybara/rspec'
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
 

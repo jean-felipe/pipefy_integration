@@ -24,6 +24,7 @@ var CardForm = React.createClass({
 				success: function(data){
 					self.props.handleAdd(data);
 					self.setState(self.getInitialState());
+					alert('Cannot add new Card: ', error);
 				},
 				error: function(xhr, status, error){
 					alert('Cannot add new Card: ', error);

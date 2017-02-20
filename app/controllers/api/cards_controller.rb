@@ -8,10 +8,10 @@ class Api::CardsController < ApplicationController
   end
 
    def create
-    binding.pry
   	card = Card.new(card_params)
   	if card.save
   	  render json: card 
+
   	else
   	  render nothing: true, status: :bad_request
   	end

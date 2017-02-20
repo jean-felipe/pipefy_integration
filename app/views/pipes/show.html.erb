@@ -1,6 +1,8 @@
 <div class="content-pipes">
   <div class="pipes-header">
-  <%= flash_messages %>
+    <% flash.each do |key, value| %>
+       <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
     <div class="row">
       <h1><%= @pipe.name %></h1>
       <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#phaseForm">New Phase</button>
@@ -38,7 +40,7 @@
 			<p>Cards: <%= ph.cards.count %></p>
 		</div>
 		<div class="phase-item-body">
-			<% ph.cards.each do |card| %>
+			<% ph.cards.where(phase_id: ph.id).each do |card| %>
 				<div class="card">
         			<div><%= card.title %></div>
         
